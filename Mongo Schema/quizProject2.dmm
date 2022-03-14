@@ -1,0 +1,433 @@
+{
+	"tables": {
+		"9e723180-ea3e-42ec-9fbd-cab23958c11b": {
+			"id": "9e723180-ea3e-42ec-9fbd-cab23958c11b",
+			"visible": true,
+			"name": "Quiz",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "98f0f910-8ec3-4ccc-a76a-9bf291dc4855",
+					"name": "_id",
+					"datatype": "objectId",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": ""
+				},
+				{
+					"id": "de4a5b83-94b8-4c6f-b95b-3028355cfd93",
+					"name": "title",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
+				},
+				{
+					"id": "8ff99496-019d-42dd-9ca2-561d5cd75451",
+					"name": "description",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
+				},
+				{
+					"id": "57cb79f5-7b6a-418e-9a18-0d3f8d3ccf41",
+					"name": "numOfQuestions",
+					"datatype": "int",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
+				},
+				{
+					"id": "6032a604-f27d-41c0-a71d-c8f3d682339b",
+					"name": "maxScore",
+					"datatype": "int",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
+				},
+				{
+					"id": "bead8034-3d23-4f22-a1e9-60f48f82ec2a",
+					"name": "Quiz Question",
+					"datatype": "objectId",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "Quiz Question"
+				}
+			],
+			"relations": [
+				"f01252c0-280c-40bd-bf00-dc6c07424565"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "20bb1af4-e461-465a-bda8-980669f221be",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "9cf68714-3d49-4cd8-b3df-eab5fcea22f3",
+							"colid": "98f0f910-8ec3-4ccc-a76a-9bf291dc4855"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"validationLevel": "na",
+			"validationAction": "na",
+			"collation": "",
+			"others": ""
+		},
+		"62cf489d-3989-4e0e-8de1-3d1494bcd422": {
+			"id": "62cf489d-3989-4e0e-8de1-3d1494bcd422",
+			"visible": true,
+			"name": "Quiz Question",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "98f0f910-8ec3-4ccc-a76a-9bf291dc4855",
+					"name": "_id",
+					"datatype": "objectId",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": ""
+				},
+				{
+					"id": "de4a5b83-94b8-4c6f-b95b-3028355cfd93",
+					"name": "title",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
+				},
+				{
+					"id": "8ff99496-019d-42dd-9ca2-561d5cd75451",
+					"name": "description",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
+				},
+				{
+					"id": "57cb79f5-7b6a-418e-9a18-0d3f8d3ccf41",
+					"name": "numOfAnswers",
+					"datatype": "int",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
+				}
+			],
+			"relations": [
+				"f01252c0-280c-40bd-bf00-dc6c07424565",
+				"34ea4f65-6a4b-429f-8206-76cbd2aad70e"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "58ae076b-84ff-4e44-abdc-c5cca4ea5a1b",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "9cf68714-3d49-4cd8-b3df-eab5fcea22f3",
+							"colid": "98f0f910-8ec3-4ccc-a76a-9bf291dc4855"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"validationLevel": "na",
+			"validationAction": "na",
+			"collation": "",
+			"others": ""
+		},
+		"6918edb7-1213-46ea-b1a1-d08d207cc52f": {
+			"id": "6918edb7-1213-46ea-b1a1-d08d207cc52f",
+			"visible": true,
+			"name": "Quiz Question Answers",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "98f0f910-8ec3-4ccc-a76a-9bf291dc4855",
+					"name": "_id",
+					"datatype": "objectId",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": ""
+				},
+				{
+					"id": "de4a5b83-94b8-4c6f-b95b-3028355cfd93",
+					"name": "correctAnswer",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
+				},
+				{
+					"id": "6032a604-f27d-41c0-a71d-c8f3d682339b",
+					"name": "points",
+					"datatype": "int",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
+				},
+				{
+					"id": "b87b10b0-bda6-4002-8f14-46fa732c31f3",
+					"name": "Quiz Question",
+					"datatype": "objectId",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "Quiz Question"
+				}
+			],
+			"relations": [
+				"34ea4f65-6a4b-429f-8206-76cbd2aad70e"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "3588a330-be52-4194-912a-ced93dcff736",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "9cf68714-3d49-4cd8-b3df-eab5fcea22f3",
+							"colid": "98f0f910-8ec3-4ccc-a76a-9bf291dc4855"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"validationLevel": "na",
+			"validationAction": "na",
+			"collation": "",
+			"others": ""
+		}
+	},
+	"relations": {
+		"f01252c0-280c-40bd-bf00-dc6c07424565": {
+			"id": "f01252c0-280c-40bd-bf00-dc6c07424565",
+			"visible": true,
+			"name": "Quiz Question_Quiz",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "58ae076b-84ff-4e44-abdc-c5cca4ea5a1b",
+			"parent": "62cf489d-3989-4e0e-8de1-3d1494bcd422",
+			"child": "9e723180-ea3e-42ec-9fbd-cab23958c11b",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "59b33408-5f22-45c6-855c-93fa90223bc8",
+					"parentcol": "98f0f910-8ec3-4ccc-a76a-9bf291dc4855",
+					"childcol": "bead8034-3d23-4f22-a1e9-60f48f82ec2a"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"34ea4f65-6a4b-429f-8206-76cbd2aad70e": {
+			"id": "34ea4f65-6a4b-429f-8206-76cbd2aad70e",
+			"visible": true,
+			"name": "Quiz Question_Quiz Question Answers",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "58ae076b-84ff-4e44-abdc-c5cca4ea5a1b",
+			"parent": "62cf489d-3989-4e0e-8de1-3d1494bcd422",
+			"child": "6918edb7-1213-46ea-b1a1-d08d207cc52f",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "c041fad9-a8c3-4612-892b-ae9a3e817fd8",
+					"parentcol": "98f0f910-8ec3-4ccc-a76a-9bf291dc4855",
+					"childcol": "b87b10b0-bda6-4002-8f14-46fa732c31f3"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		}
+	},
+	"notes": {},
+	"lines": {},
+	"model": {
+		"name": "project quiz",
+		"id": "bd1dc439-8f78-47f6-b0e5-b5cc9cee585e",
+		"activeDiagram": "f300cf8f-3b91-4fd8-ad05-670052a9e694",
+		"desc": "",
+		"path": "",
+		"type": "MONGODB",
+		"version": 1,
+		"parentTableInFkCols": true,
+		"caseConvention": "under",
+		"replaceSpace": "_",
+		"color": "transparent",
+		"sideSelections": true,
+		"isDirty": true,
+		"storedin": {
+			"major": 4,
+			"minor": 4,
+			"extra": 0
+		},
+		"embeddedInParentsIsDisplayed": true,
+		"schemaContainerIsDisplayed": false,
+		"cardinalityIsDisplayed": false,
+		"estimatedSizeIsDisplayed": false,
+		"def_coltopk": true,
+		"def_validationLevel": "na",
+		"def_validationAction": "na",
+		"def_collation": "",
+		"def_others": ""
+	},
+	"otherObjects": {},
+	"diagrams": {
+		"f300cf8f-3b91-4fd8-ad05-670052a9e694": {
+			"name": "Main Diagram",
+			"description": "",
+			"id": "f300cf8f-3b91-4fd8-ad05-670052a9e694",
+			"keysgraphics": true,
+			"linegraphics": "detailed",
+			"zoom": 1,
+			"background": "transparent",
+			"lineColor": "transparent",
+			"isOpen": true,
+			"main": true,
+			"diagramItems": {
+				"9e723180-ea3e-42ec-9fbd-cab23958c11b": {
+					"referencedItemId": "9e723180-ea3e-42ec-9fbd-cab23958c11b",
+					"x": 277,
+					"y": 268,
+					"gHeight": 135,
+					"gWidth": 235,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true
+				},
+				"62cf489d-3989-4e0e-8de1-3d1494bcd422": {
+					"referencedItemId": "62cf489d-3989-4e0e-8de1-3d1494bcd422",
+					"x": 566,
+					"y": 270,
+					"gHeight": 99,
+					"gWidth": 215,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true
+				},
+				"6918edb7-1213-46ea-b1a1-d08d207cc52f": {
+					"referencedItemId": "6918edb7-1213-46ea-b1a1-d08d207cc52f",
+					"x": 821,
+					"y": 270,
+					"gHeight": 99,
+					"gWidth": 235,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true
+				}
+			},
+			"scroll": {
+				"x": 0,
+				"y": 0
+			}
+		}
+	},
+	"order": []
+}

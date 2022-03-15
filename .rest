@@ -1,0 +1,11 @@
+GET http://localhost:3000/quizsetup
+
+###
+POST http://localhost:3000/quizsetup
+Content-type: application/json
+
+{
+    "title": "test",
+    "description": "test description",
+    "maxScore": 100
+}

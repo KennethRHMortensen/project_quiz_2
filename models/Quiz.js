@@ -2,18 +2,20 @@ const mongoose = require("mongoose");
 
 //Instantiate new list with mongoose
 const QuizSchema = new mongoose.Schema({
-    
-    /*
-    dateStart: {
-        type: Date,
+
+    title: {
+        type: String,
         required: true
     },
-    
-    tasks: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Task'
-    }],
-    */
+    description: {
+        type: String,
+        required: false
+    },
+    maxScore: {
+        type: Number,
+        required: true
+    }
+   
      
 });
 

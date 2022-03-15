@@ -1,12 +1,28 @@
 const mongoUtil = require("../models/mongoUtil");
-const User = require("../models/Quiz");
+const Quiz = require("../models/Quiz");
 
 module.exports = {
   // query for users and sorting parameters
-    getUser: async function (query, sort) {
+    postQuiz: async function (req) {
     const db = await mongoUtil.mongoConnect(); // connect
-    const users = await User.find(query, null, sort); // find and read users collection, sorted
+    console.log(db);
+    
+    const quiz = new Quiz({
+      title: req.body.title,
+      description: req.body.description,
+      maxScore: req.body.maxScore
+    })
+    
+    Quiz.create(quiz);
+
     db.close(); // close connection, so we don't have multiple open or leave a hole
-    return users;
+  },
+
+  getQuiz: async function (query, sort){
+    const db = await mongoUtil.mongoConnect(); // connect
+    const quiz = await Quiz.find(query, null, sort);
+    db.close();
+    return quiz;
   }
+
 };

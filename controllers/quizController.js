@@ -46,8 +46,7 @@ module.exports = {
       correct: req.body.answerCorrect,
       points: req.body.points,
       answer: req.body.answer,
-      questions: req.body.questions
-      
+      question: req.body.question
     })
  
     QuizQuestionAnswer.create(quiz, function(error){

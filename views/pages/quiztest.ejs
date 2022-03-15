@@ -8,7 +8,17 @@
     <h1><%= title %></h1>
     <p>On this page you can test your newly created quiz</p>
 
+    <ul>
 
+    <% quiz.forEach(element =>{ %>
+      <li>
+        <h3><%= element.title %></h3>
+        <p><%= element.description %></p>
+        <p><%= element.maxScore %></p>
+      </li> 
+    <% }) %>
+
+    </ul>
   </div>
 
 </body>

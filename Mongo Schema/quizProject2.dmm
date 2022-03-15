@@ -24,7 +24,7 @@
 					"datatype": "string",
 					"param": "",
 					"pk": false,
-					"nn": false,
+					"nn": true,
 					"comment": "",
 					"defaultvalue": "",
 					"data": "",
@@ -36,20 +36,6 @@
 					"id": "8ff99496-019d-42dd-9ca2-561d5cd75451",
 					"name": "description",
 					"datatype": "string",
-					"param": "",
-					"pk": false,
-					"nn": true,
-					"comment": "",
-					"defaultvalue": "",
-					"data": "",
-					"list": false,
-					"enum": "",
-					"validate": ""
-				},
-				{
-					"id": "57cb79f5-7b6a-418e-9a18-0d3f8d3ccf41",
-					"name": "numOfQuestions",
-					"datatype": "int",
 					"param": "",
 					"pk": false,
 					"nn": false,
@@ -66,30 +52,17 @@
 					"datatype": "int",
 					"param": "",
 					"pk": false,
-					"nn": false,
+					"nn": true,
 					"comment": "",
 					"defaultvalue": "",
 					"data": "",
 					"list": false,
 					"enum": "",
 					"validate": ""
-				},
-				{
-					"id": "bead8034-3d23-4f22-a1e9-60f48f82ec2a",
-					"name": "Quiz Question",
-					"datatype": "objectId",
-					"param": "",
-					"pk": false,
-					"nn": true,
-					"comment": "",
-					"defaultvalue": "",
-					"data": "",
-					"fk": true,
-					"ref": "Quiz Question"
 				}
 			],
 			"relations": [
-				"f01252c0-280c-40bd-bf00-dc6c07424565"
+				"5a3ebd18-d59d-4571-9830-695f11a19302"
 			],
 			"lines": [],
 			"keys": [
@@ -139,7 +112,7 @@
 					"datatype": "string",
 					"param": "",
 					"pk": false,
-					"nn": false,
+					"nn": true,
 					"comment": "",
 					"defaultvalue": "",
 					"data": "",
@@ -153,7 +126,7 @@
 					"datatype": "string",
 					"param": "",
 					"pk": false,
-					"nn": true,
+					"nn": false,
 					"comment": "",
 					"defaultvalue": "",
 					"data": "",
@@ -162,23 +135,36 @@
 					"validate": ""
 				},
 				{
-					"id": "57cb79f5-7b6a-418e-9a18-0d3f8d3ccf41",
-					"name": "numOfAnswers",
-					"datatype": "int",
+					"id": "1f4da425-d608-425e-9892-925a51252a95",
+					"name": "possibleAnswers",
+					"datatype": "objectId",
 					"param": "",
 					"pk": false,
-					"nn": false,
+					"nn": true,
 					"comment": "",
 					"defaultvalue": "",
 					"data": "",
-					"list": false,
+					"list": true,
 					"enum": "",
 					"validate": ""
+				},
+				{
+					"id": "4f427a64-bc0a-4c81-8e88-e9fd401c77c8",
+					"name": "Quiz",
+					"datatype": "objectId",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "Quiz"
 				}
 			],
 			"relations": [
-				"f01252c0-280c-40bd-bf00-dc6c07424565",
-				"34ea4f65-6a4b-429f-8206-76cbd2aad70e"
+				"276676a4-410c-4219-9feb-cf5e79d7302d",
+				"5a3ebd18-d59d-4571-9830-695f11a19302"
 			],
 			"lines": [],
 			"keys": [
@@ -193,6 +179,13 @@
 							"colid": "98f0f910-8ec3-4ccc-a76a-9bf291dc4855"
 						}
 					]
+				},
+				{
+					"id": "297c063a-13b8-4cac-bc13-09d7b64f47bb",
+					"isPk": false,
+					"using": "na",
+					"name": "Foreign key",
+					"cols": []
 				}
 			],
 			"indexes": [],
@@ -207,7 +200,7 @@
 		"6918edb7-1213-46ea-b1a1-d08d207cc52f": {
 			"id": "6918edb7-1213-46ea-b1a1-d08d207cc52f",
 			"visible": true,
-			"name": "Quiz Question Answers",
+			"name": "Quiz Question Answer",
 			"desc": "",
 			"estimatedSize": "",
 			"cols": [
@@ -224,11 +217,11 @@
 				},
 				{
 					"id": "de4a5b83-94b8-4c6f-b95b-3028355cfd93",
-					"name": "correctAnswer",
-					"datatype": "string",
+					"name": "correct",
+					"datatype": "bool",
 					"param": "",
 					"pk": false,
-					"nn": false,
+					"nn": true,
 					"comment": "",
 					"defaultvalue": "",
 					"data": "",
@@ -242,7 +235,7 @@
 					"datatype": "int",
 					"param": "",
 					"pk": false,
-					"nn": false,
+					"nn": true,
 					"comment": "",
 					"defaultvalue": "",
 					"data": "",
@@ -251,7 +244,22 @@
 					"validate": ""
 				},
 				{
-					"id": "b87b10b0-bda6-4002-8f14-46fa732c31f3",
+					"id": "93bc2720-cf73-421a-884f-28d5f0763a96",
+					"name": "answer",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": "",
+					"fk": false
+				},
+				{
+					"id": "b0506a2d-678a-4599-93ab-5aa2b02eb419",
 					"name": "Quiz Question",
 					"datatype": "objectId",
 					"param": "",
@@ -265,7 +273,7 @@
 				}
 			],
 			"relations": [
-				"34ea4f65-6a4b-429f-8206-76cbd2aad70e"
+				"276676a4-410c-4219-9feb-cf5e79d7302d"
 			],
 			"lines": [],
 			"keys": [
@@ -293,35 +301,10 @@
 		}
 	},
 	"relations": {
-		"f01252c0-280c-40bd-bf00-dc6c07424565": {
-			"id": "f01252c0-280c-40bd-bf00-dc6c07424565",
+		"276676a4-410c-4219-9feb-cf5e79d7302d": {
+			"id": "276676a4-410c-4219-9feb-cf5e79d7302d",
 			"visible": true,
-			"name": "Quiz Question_Quiz",
-			"desc": "",
-			"type": "identifying",
-			"parent_key": "58ae076b-84ff-4e44-abdc-c5cca4ea5a1b",
-			"parent": "62cf489d-3989-4e0e-8de1-3d1494bcd422",
-			"child": "9e723180-ea3e-42ec-9fbd-cab23958c11b",
-			"c_mp": "true",
-			"c_mch": "true",
-			"c_p": "one",
-			"c_ch": "many",
-			"c_cp": "",
-			"c_cch": "",
-			"cols": [
-				{
-					"id": "59b33408-5f22-45c6-855c-93fa90223bc8",
-					"parentcol": "98f0f910-8ec3-4ccc-a76a-9bf291dc4855",
-					"childcol": "bead8034-3d23-4f22-a1e9-60f48f82ec2a"
-				}
-			],
-			"generate": true,
-			"generateCustomCode": true
-		},
-		"34ea4f65-6a4b-429f-8206-76cbd2aad70e": {
-			"id": "34ea4f65-6a4b-429f-8206-76cbd2aad70e",
-			"visible": true,
-			"name": "Quiz Question_Quiz Question Answers",
+			"name": "Quiz Question_Quiz Question Answer",
 			"desc": "",
 			"type": "identifying",
 			"parent_key": "58ae076b-84ff-4e44-abdc-c5cca4ea5a1b",
@@ -335,9 +318,34 @@
 			"c_cch": "",
 			"cols": [
 				{
-					"id": "c041fad9-a8c3-4612-892b-ae9a3e817fd8",
+					"id": "eda38151-c7ff-4829-a3ab-8b3d93cc174e",
 					"parentcol": "98f0f910-8ec3-4ccc-a76a-9bf291dc4855",
-					"childcol": "b87b10b0-bda6-4002-8f14-46fa732c31f3"
+					"childcol": "b0506a2d-678a-4599-93ab-5aa2b02eb419"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"5a3ebd18-d59d-4571-9830-695f11a19302": {
+			"id": "5a3ebd18-d59d-4571-9830-695f11a19302",
+			"visible": true,
+			"name": "Quiz_Quiz Question",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "20bb1af4-e461-465a-bda8-980669f221be",
+			"parent": "9e723180-ea3e-42ec-9fbd-cab23958c11b",
+			"child": "62cf489d-3989-4e0e-8de1-3d1494bcd422",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "a09cd4ab-50d2-4350-aea1-4e94b36bc3f9",
+					"parentcol": "98f0f910-8ec3-4ccc-a76a-9bf291dc4855",
+					"childcol": "4f427a64-bc0a-4c81-8e88-e9fd401c77c8"
 				}
 			],
 			"generate": true,
@@ -359,7 +367,7 @@
 		"replaceSpace": "_",
 		"color": "transparent",
 		"sideSelections": true,
-		"isDirty": true,
+		"isDirty": false,
 		"storedin": {
 			"major": 4,
 			"minor": 4,
@@ -373,7 +381,8 @@
 		"def_validationLevel": "na",
 		"def_validationAction": "na",
 		"def_collation": "",
-		"def_others": ""
+		"def_others": "",
+		"lastSaved": "Tue Mar 15 2022 13:40:25 GMT+0100 (Central European Standard Time)"
 	},
 	"otherObjects": {},
 	"diagrams": {
@@ -383,7 +392,7 @@
 			"id": "f300cf8f-3b91-4fd8-ad05-670052a9e694",
 			"keysgraphics": true,
 			"linegraphics": "detailed",
-			"zoom": 1,
+			"zoom": 1.3,
 			"background": "transparent",
 			"lineColor": "transparent",
 			"isOpen": true,
@@ -393,8 +402,8 @@
 					"referencedItemId": "9e723180-ea3e-42ec-9fbd-cab23958c11b",
 					"x": 277,
 					"y": 268,
-					"gHeight": 135,
-					"gWidth": 235,
+					"gHeight": 99,
+					"gWidth": 207,
 					"color": "#ffffff",
 					"background": "#03a9f4",
 					"resized": false,
@@ -404,8 +413,8 @@
 					"referencedItemId": "62cf489d-3989-4e0e-8de1-3d1494bcd422",
 					"x": 566,
 					"y": 270,
-					"gHeight": 99,
-					"gWidth": 215,
+					"gHeight": 117,
+					"gWidth": 255,
 					"color": "#ffffff",
 					"background": "#03a9f4",
 					"resized": false,
@@ -413,9 +422,9 @@
 				},
 				"6918edb7-1213-46ea-b1a1-d08d207cc52f": {
 					"referencedItemId": "6918edb7-1213-46ea-b1a1-d08d207cc52f",
-					"x": 821,
-					"y": 270,
-					"gHeight": 99,
+					"x": 865,
+					"y": 271,
+					"gHeight": 117,
 					"gWidth": 235,
 					"color": "#ffffff",
 					"background": "#03a9f4",

@@ -1,11 +1,37 @@
 GET http://localhost:3000/quizsetup
 
+### 
+GET http://localhost:3000/quizsetup2
+
+###
+GET http://localhost:3000/quizsetup3
+
 ###
 POST http://localhost:3000/quizsetup
 Content-type: application/json
 
 {
-    "title": "test",
+    "title": "test2",
     "description": "test description",
-    "maxScore": 100
+    "maxScore": 100,
+    "quiz": []
+}
+
+###
+POST http://localhost:3000/quizsetup2
+Content-type: application/json
+
+{
+    "title": "testfdsgdfggdfs2",
+    "description": "test description2"
+}
+
+###
+POST http://localhost:3000/quizsetup3
+Content-type: application/json
+
+{
+    "correct": true,
+    "points": 10,
+    "answer": "this answer is the correct one"
 }

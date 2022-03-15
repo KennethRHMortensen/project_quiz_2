@@ -1,0 +1,43 @@
+<%- include('../partials/head') %>
+
+<body>
+  <div class="container">
+    
+    <%- include('../partials/header') %>
+
+    <h1><%= title %></h1>
+    <p>On this page you can setup a new quiz</p>
+
+    <form action="/createAnswer" method="POST">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg">
+            <input type="checkbox" name="answerCorrect" value="true" required>
+            <input type="number" name="points" placeholder="answer points" required>
+            <input type="text" name="answer" placeholder="answer text" required>
+            <select name="quiz" id="quiz">
+              
+              <% question.forEach(element => { %>
+                <option value="<%= element._id %>"> <%= element.title %></option>
+              <% }) %>
+            
+            </select>
+          
+          </div>
+        </div>
+      </div>
+      <input type="submit" name="submit">
+    </form>
+
+  </div>
+
+</body>
+
+<footer>
+  <%- include('../partials/footer') %>
+</footer>
+
+</html>
+
+
+  

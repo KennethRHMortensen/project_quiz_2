@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const autopopulate = require("mongoose-autopopulate")
 
 //Instantiate new list with mongoose
 const QuizQuestionAnswerSchema = new mongoose.Schema({
@@ -12,7 +13,7 @@ const QuizQuestionAnswerSchema = new mongoose.Schema({
         required: true
     },
     answer: {
-        type: string,
+        type: String,
         required: true
     },   
     questions: [{

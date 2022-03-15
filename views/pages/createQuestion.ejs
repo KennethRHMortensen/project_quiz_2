@@ -1,0 +1,42 @@
+<%- include('../partials/head') %>
+
+<body>
+  <div class="container">
+    
+    <%- include('../partials/header') %>
+
+    <h1><%= title %></h1>
+    <p>On this page you can setup a new quiz</p>
+
+    <form action="/createQuestion" method="POST">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg">
+            <input type="text" name="questionTitle" placeholder="quesiton title" required>
+            <input type="text" name="questionDescription" placeholder="question description">
+            
+            <select name="quiz" id="quiz">
+              
+              <% quiz.forEach(element => { %>
+                <option value="<%= element._id %>"> <%= element.title %></option>
+              <% }) %>
+            
+            </select>
+          </div>
+        </div>
+      </div>
+      <input type="submit" name="submit">
+    </form>
+
+  </div>
+
+</body>
+
+<footer>
+  <%- include('../partials/footer') %>
+</footer>
+
+</html>
+
+
+  

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const autopopulate = require("mongoose-autopopulate")
 
 //Instantiate new list with mongoose
 const QuizQuestionSchema = new mongoose.Schema({

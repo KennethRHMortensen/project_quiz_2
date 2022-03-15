@@ -1,0 +1,36 @@
+<%- include('../partials/head') %>
+
+<body>
+  <div class="container">
+    
+    <%- include('../partials/header') %>
+
+    <h1><%= title %></h1>
+    <p>On this page you can setup a new quiz</p>
+
+    <form action="/createQuiz" method="POST">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg">
+            <input type="text" name="title" placeholder="quiz title" required>
+            <input type="text" name="description" placeholder="quiz description">
+            <input type="number" name="maxScore" placeholder="quiz maxscore" required>
+
+          </div>
+        </div>
+      </div>
+      <input type="submit" name="submit">
+    </form>
+
+  </div>
+
+</body>
+
+<footer>
+  <%- include('../partials/footer') %>
+</footer>
+
+</html>
+
+
+  

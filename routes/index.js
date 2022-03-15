@@ -53,7 +53,7 @@ router.post('/createQuiz', async (req, res) => {
 /* POST new question to quiz. */
 router.post('/createQuestion', async (req, res) => {
   await quizController.postQuizQuestion(req);
-  res.redirect('/createAnswer')
+  res.redirect('/createQuestion')
 })
 
 /* POST new answer to quiz. */

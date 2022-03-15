@@ -15,7 +15,7 @@
             <input type="checkbox" name="answerCorrect" value="true">
             <input type="number" name="points" placeholder="answer points" required>
             <input type="text" name="answer" placeholder="answer text" required>
-            <select name="quiz" id="quiz">
+            <select name="question" id="question">
               
               <% question.forEach(element => { %>
                 <option value="<%= element._id %>"> <%= element.title %></option>

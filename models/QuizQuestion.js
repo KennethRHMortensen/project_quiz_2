@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const autopopulate = require("mongoose-autopopulate")
+// const autopopulate = require("mongoose-autopopulate")
 
 //Instantiate new list with mongoose
 const QuizQuestionSchema = new mongoose.Schema({
@@ -19,8 +19,10 @@ const QuizQuestionSchema = new mongoose.Schema({
         required: true,
         autopopulate: true
     }],
-   
+    answers: [
+        
+    ]   
      
 });
-QuizQuestionSchema.plugin(autopopulate);
+// QuizQuestionSchema.plugin(autopopulate);
 module.exports = new mongoose.model('QuizQuestion', QuizQuestionSchema, 'quizquestion');

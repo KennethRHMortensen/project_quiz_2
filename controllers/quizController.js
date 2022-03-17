@@ -14,12 +14,20 @@ module.exports = {
       description: req.body.description,
       maxScore: req.body.maxScore
     })
-    Quiz.create(quiz, function(error){
-      if(error){
-        console.log('fejl');
-      }
-      db.close(); // close connection, so we don't have multiple open or leave a hole
-    });
+      try {
+        let createQuiz = await Quiz.create(quiz);
+        db.close();
+        return createQuiz;
+    } catch (err) {
+        console.log(err)
+    }
+
+    // Quiz.create(quiz, function(error){
+    //   if(error){
+    //     console.log('fejl');
+    //   }
+    //   db.close(); // close connection, so we don't have multiple open or leave a hole
+    // });
   },
 
     postQuizQuestion: async function (req) {
@@ -30,13 +38,19 @@ module.exports = {
       description: req.body.questionDescription,
       quiz: req.body.quiz
     })
-    
-    QuizQuestion.create(quiz, function(error){
-      if(error){
-        console.log('fejl');
-      }
-      db.close(); // close connection, so we don't have multiple open or leave a hole
-    });
+      try {
+        let quizquestion = await QuizQuestion.create(quiz);
+        db.close();
+        return quizquestion;
+    } catch (err) {
+        console.log(err)
+    }
+    // QuizQuestion.create(quiz, function(error){
+    //   if(error){
+    //     console.log('fejl');
+    //   }
+    //   db.close(); // close connection, so we don't have multiple open or leave a hole
+    // });
   },
 
     postQuizQuestionAnswer: async function (req) {
@@ -49,12 +63,19 @@ module.exports = {
       question: req.body.question
     })
  
-    QuizQuestionAnswer.create(quiz, function(error){
-      if(error){
-        console.log('fejl');
-      }
-      db.close(); // close connection, so we don't have multiple open or leave a hole
-    });
+      try {
+        let quizanswer = await QuizQuestionAnswer.create(quiz);
+        db.close();
+        return quizanswer;
+    } catch (err) {
+        console.log(err)
+    }
+    // QuizQuestionAnswer.create(quiz, function(error){
+    //   if(error){
+    //     console.log('fejl');
+    //   }
+    //   db.close(); // close connection, so we don't have multiple open or leave a hole
+    // });
   },
 
 
@@ -79,6 +100,27 @@ module.exports = {
     const quiz = await QuizQuestionAnswer.find(query, null, sort);
     db.close();
     return quiz;
-  }
+  },
+
+  getAll: async function (query, sort){
+    const db = await mongoUtil.mongoConnect(); // connect
+    const quiz = await Quiz.find(query, null, sort);
+    console.log(quiz);
+    for (let i = 0; i < quiz.length; i++) {
+      const question = await QuizQuestion.find({"quiz": quiz[i]._id});
+      console.log(question);
+      const test = quiz[i].questions.push(question);
+      console.log(test);
+      for (let j = 0; j < question.length; j++) { 
+        const answer = await QuizQuestionAnswer.find({"question": question[j]._id});
+        const test = question[j].answers.push(answer);
+        console.log(test);        
+      }
+    }
+    // const question = await QuizQuestion.find(query, null, sort);
+    // const answer = await QuizQuestionAnswer.find(query, null, sort);
+    db.close();
+    return quiz;
+  }, 
 
 };

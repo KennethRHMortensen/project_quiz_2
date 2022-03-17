@@ -29,14 +29,36 @@ router.get('/createAnswer', async function(req, res, next) {
     question: question });
 });
 
+// /* GET test quiz page. */
+// router.get('/quiztest', async function(req, res, next) {
+//   const quiz = await quizController.getQuiz();
+//   const question = await quizController.getQuizQuestion();
+//   const answer = await quizController.getQuizQuestionAnswer();
+//   console.log(quiz);
+//   console.log(question);
+//   console.log(answer);
+//   res.render('pages/quiztest', { 
+//     title: 'Quiz testing page',
+//     quiz: quiz
+//    });
+// });
+
 /* GET test quiz page. */
 router.get('/quiztest', async function(req, res, next) {
-  const quiz = await quizController.getQuizQuestionAnswer();
+  const quiz = await quizController.getAll();
   console.log(quiz);
+  console.log(quiz[0].questions[0][0].title);
+  console.log(quiz[0].questions[0][0].answers);
   res.render('pages/quiztest', { 
     title: 'Quiz testing page',
     quiz: quiz
-   });
+  })
+});
+
+router.get('/quiztest2', async function(req, res, next) {
+  const quiz = await quizController.getAll();
+  console.log('MY LENGTH:' + quiz[0].questions[0].length);
+  res.send(quiz);
 });
 
 /* GET quiz game page. */

@@ -15,8 +15,8 @@ const QuizSchema = new mongoose.Schema({
     maxScore: {
         type: Number,
         required: true
-    }
-     
+    },
+    questions: []
 });
 
 module.exports = new mongoose.model('Quiz', QuizSchema, 'quiz');

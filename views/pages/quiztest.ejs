@@ -9,19 +9,36 @@
     <p>On this page you can test your newly created quiz</p>
 
     <ul>
+      <!--
+        questions [
+          [
+            {
+              ...
+            }
+          ]
+        ]
+      -->
 
-    <% quiz.forEach(element =>{ %>
-      <li>
-
-        
-        <p><%= element.answer %></p>
-        <p><%= element.points %></p>
-        <p><%= element.correct %></p>
-        
-        
-
-      </li> 
-    <% }) %>
+      <% for(let i = 0; i < quiz.length; i++){ %>
+     
+          <p>Quiz Title:<%= quiz[i].title %></p>          
+          <p>Quiz Description: <%= quiz[i].description %></p>          
+          <p>Quiz Max Score: <%= quiz[i].maxScore %></p>
+          <% for(let j = 0; j < quiz[i].questions[0].length; j++){ %>
+            
+            <p>Question title:<%= quiz[i].questions[0][j].title %></p>
+            <p>Question description:<%= quiz[i].questions[0][j].description %></p>
+            <% for(let k = 0; k < quiz[i].questions[0][j].answers[0].length; k++){ %>   
+              <p>Answer: <%= quiz[i].questions[0][j].answers[0][k].answer %></p>
+              <p>Correct: <%= quiz[i].questions[0][j].answers[0][k].correct %></p>
+              <p>Points: <%= quiz[i].questions[0][j].answers[0][k].points %></p>
+                
+            <% } %>         
+                   
+          <% } %>   
+          
+      <% } %>
+             
 
     </ul>
   </div>

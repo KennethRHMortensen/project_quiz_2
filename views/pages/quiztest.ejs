@@ -12,9 +12,14 @@
 
     <% quiz.forEach(element =>{ %>
       <li>
-        <h3><%= element.title %></h3>
-        <p><%= element.description %></p>
-        <p><%= element.maxScore %></p>
+
+        
+        <p><%= element.answer %></p>
+        <p><%= element.points %></p>
+        <p><%= element.correct %></p>
+        
+        
+
       </li> 
     <% }) %>
 

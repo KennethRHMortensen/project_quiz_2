@@ -32,6 +32,7 @@ router.get('/createAnswer', async function(req, res, next) {
 /* GET test quiz page. */
 router.get('/quiztest', async function(req, res, next) {
   const quiz = await quizController.getQuiz();
+  console.log(quiz);
   res.render('pages/quiztest', { 
     title: 'Quiz testing page',
     quiz: quiz
@@ -47,19 +48,19 @@ router.get('/quiz', function(req, res, next) {
 /* POST new quiz. */
 router.post('/createQuiz', async (req, res) => {
   await quizController.postQuiz(req);
-  res.redirect('/createQuiz')
+  res.redirect('/')
 })
 
 /* POST new question to quiz. */
 router.post('/createQuestion', async (req, res) => {
   await quizController.postQuizQuestion(req);
-  res.redirect('/createQuestion')
+  res.redirect('/')
 })
 
 /* POST new answer to quiz. */
 router.post('/createAnswer', async (req, res) => {
   await quizController.postQuizQuestionAnswer(req);
-  res.redirect('/createAnswer')
+  res.redirect('/')
 })
 
 

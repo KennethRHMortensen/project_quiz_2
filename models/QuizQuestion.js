@@ -23,4 +23,4 @@ const QuizQuestionSchema = new mongoose.Schema({
      
 });
 QuizQuestionSchema.plugin(autopopulate);
-module.exports = new mongoose.model('QuizQuestion', QuizQuestionSchema, 'QuizQuestion');
+module.exports = new mongoose.model('QuizQuestion', QuizQuestionSchema, 'quizquestion');

@@ -44,7 +44,7 @@ module.exports = {
     
     const quiz = new QuizQuestionAnswer({
       correct: req.body.answerCorrect,
-      points: req.body.points,
+      points: req.body.points ? req.body.points : 0,
       answer: req.body.answer,
       question: req.body.question
     })

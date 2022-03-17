@@ -6,7 +6,8 @@ const QuizQuestionAnswerSchema = new mongoose.Schema({
     
     correct: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false
     },
     points: {
         type: Number,
@@ -25,4 +26,4 @@ const QuizQuestionAnswerSchema = new mongoose.Schema({
      
 });
 QuizQuestionAnswerSchema.plugin(autopopulate);
-module.exports = new mongoose.model('QuizQuestionAnswer', QuizQuestionAnswerSchema, 'QuizQuestionAnswer');
+module.exports = new mongoose.model('QuizQuestionAnswer', QuizQuestionAnswerSchema, 'quizanswer');

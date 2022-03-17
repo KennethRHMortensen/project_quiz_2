@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+
 //Instantiate new list with mongoose
 const QuizSchema = new mongoose.Schema({
 
@@ -15,8 +16,7 @@ const QuizSchema = new mongoose.Schema({
         type: Number,
         required: true
     }
-   
      
 });
 
-module.exports = new mongoose.model('Quiz', QuizSchema);
+module.exports = new mongoose.model('Quiz', QuizSchema, 'quiz');
